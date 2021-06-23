@@ -25,11 +25,11 @@
                 年齢：<input type="text" name="age">
             </div>
             <div>
-                健康上気になる点：<input type="kijutu" name="kijutu">
+                健康上気になる点：<input type="text" name="kijutu">
             </div>
 
             <div>
-                <button>submit</button>
+                <button>送信</button>
             </div>
             <a href="read.php">一覧画面</a>
         </fieldset>

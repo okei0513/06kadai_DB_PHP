@@ -33,10 +33,9 @@ try {
 }
 
 //悪意のある誰かが何かを送ってくる可能性
-//手書きしない。間違う。まずコピーしてSQLで表示⇨VALUESを編集
-$sql = 'INSERT INTO
-        todo_table(id, username, mail, gender, age, kijutu)
-        VALUES(NULL, :username, :mail, :gender, :age, :kijutu, sysdate(), sysdate())';
+//SQLで表示⇨VALUESを編集
+$sql = 'INSERT INTO user_touroku(id, username, mail, gender, age, kijutu)
+        VALUES(NULL, :username, :mail, :gender, :age, :kijutu)';
 
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':username', $username, PDO::PARAM_STR);

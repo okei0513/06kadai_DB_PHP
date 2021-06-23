@@ -2,7 +2,7 @@
 
 // DB接続情報
 //「dbname」「port」「host」「username」「password」を設定
-$dbn = 'mysql:dbname=gsacf_DEV8_04_kada;charset=utf8;port=3306;host=localhost';
+$dbn = 'mysql:dbname=gsacf_DEV8_04_kadai;charset=utf8;port=3306;host=localhost';
 $user = 'root';
 $pwd = '';
 
@@ -15,7 +15,7 @@ try {
 }
 //「dbError:...」が表示されたらdb接続でエラーが発生していることがわかる.
 // 参照はSELECT文!
-$sql = 'SELECT * FROM todo_table';
+$sql = 'SELECT * FROM user_touroku';
 
 $stmt = $pdo->prepare($sql);
 $status = $stmt->execute();
@@ -57,11 +57,11 @@ if ($status == false) {
         <table>
             <thead>
                 <tr>
-                    <th>username</th>
+                    <th>ユーザー名</th>
                     <th>mail</th>
-                    <th>gender</th>
-                    <th>age</th>
-                    <th>kijutu</th>
+                    <th>性別</th>
+                    <th>年齢</th>
+                    <th>気になること(任意)</th>
                 </tr>
             </thead>
             <tbody>
