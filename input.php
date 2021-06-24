@@ -45,13 +45,15 @@
         font-size: 100%;
         margin-top: 100px;
         padding: 0;
-        text-align: center;
+
     }
 
     .main_box {
         border-color: #5D99FF;
         background-color: white;
-
+        max-width: 650px;
+        text-align: center;
+        margin: 0 auto;
     }
 
     .main_box_text {

@@ -50,11 +50,11 @@ if ($status == false) {
     <title>登録一覧</title>
 </head>
 
-<body>
-    <fieldset>
-        <legend>登録一覧</legend>
-        <a href="input.php">入力画面へ</a>
-        <table>
+<body class="all_box">
+    <fieldset class="main_box">
+        <legend class="title">登録一覧</legend>
+
+        <table class="table_box">
             <thead>
                 <tr>
                     <th>ユーザー名</th>
@@ -69,7 +69,53 @@ if ($status == false) {
                 <?= $output ?>
             </tbody>
         </table>
+        <a href=" input.php">入力画面へ</a>
     </fieldset>
 </body>
+
+<style>
+    .all_box {
+        background-color: #BBFFFF;
+        font-family: Verdana, "ＭＳ Ｐゴシック", sans-serif;
+        font-size: 100%;
+        margin-top: 100px;
+        padding: 0;
+        text-align: center;
+    }
+
+    .main_box {
+        border-color: #5D99FF;
+        background-color: white;
+        max-width: 650px;
+        text-align: center;
+        margin: 0 auto;
+
+    }
+
+    .title {
+        position: relative;
+        background: #dfefff;
+        box-shadow: 0px 0px 0px 5px #dfefff;
+        border: dashed 2px white;
+        padding: 0.2em 0.5em;
+        color: #454545;
+        font-size: 35px;
+    }
+
+    .title:after {
+        position: absolute;
+        content: '';
+        left: -7px;
+        top: -7px;
+        border-width: 0 0 15px 15px;
+        border-style: solid;
+        border-color: #fff #fff #a8d4ff;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+    }
+
+    .table_box {
+        width: 100%;
+    }
+</style>
 
 </html>
