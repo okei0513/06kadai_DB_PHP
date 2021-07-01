@@ -1,18 +1,9 @@
 <?php
 
 // DB接続情報
-//「dbname」「port」「host」「username」「password」を設定
-$dbn = 'mysql:dbname=gsacf_DEV8_04_kadai;charset=utf8;port=3306;host=localhost';
-$user = 'root';
-$pwd = '';
+include('functions.php'); // 関数を記述したファイルの読み込み
+$pdo = connect_to_db();
 
-// DB接続
-try {
-    $pdo = new PDO($dbn, $user, $pwd);
-} catch (PDOException $e) {
-    echo json_encode(["db error" => "{$e->getMessage()}"]);
-    exit();
-}
 //「dbError:...」が表示されたらdb接続でエラーが発生していることがわかる.
 // 参照はSELECT文!
 $sql = 'SELECT * FROM user_touroku';
@@ -37,7 +28,18 @@ if ($status == false) {
         $output .= "<td>{$record["age"]}</td>";
         $output .= "<td>{$record["kijutu"]}</td>";
         $output .= "</tr>";
+        // edit deleteリンクを追加
+        $output .= "<td>
+            <a href='edit.php?id={$record["id"]}'>edit</a>
+            </td>";
+        $output .= "<td>
+            <a href='delete.php?id={$record["id"]}'>delete</a>
+            </td>";
+        $output .= "</tr>";
     }
+    // $recordの参照を解除する．解除しないと，再度foreachした場合に最初からループしない
+    // 今回は以降foreachしないので影響なし
+    unset($record);
 }
 ?>
 
@@ -69,7 +71,7 @@ if ($status == false) {
                 <?= $output ?>
             </tbody>
         </table>
-        <a href=" input.php">入力画面へ</a>
+        <a href="input.php">入力画面へ</a>
     </fieldset>
 </body>
 

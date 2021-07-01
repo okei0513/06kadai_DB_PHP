@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- ホスト: localhost
--- 生成日時: 2021 年 6 月 24 日 17:30
+-- 生成日時: 2021 年 7 月 01 日 16:52
 -- サーバのバージョン： 10.4.19-MariaDB
 -- PHP のバージョン: 7.4.20
 
@@ -42,7 +42,9 @@ CREATE TABLE `user_touroku` (
 
 INSERT INTO `user_touroku` (`id`, `username`, `mail`, `gender`, `age`, `kijutu`) VALUES
 (6, 'たまご', 'keienne0513@icloud.com', '男性', '1', '健康'),
-(7, 'こあら', 'mail', '女性', '100', 'あさごはん');
+(7, 'こあら', 'mail', '女性', '100', 'あさごはん'),
+(8, 'かめ', 'ggg', '男性', '36', 'みどり'),
+(9, 'かえる', 'sxz', '女性', '３４', 'あさごはん');
 
 --
 -- ダンプしたテーブルのインデックス
@@ -62,7 +64,7 @@ ALTER TABLE `user_touroku`
 -- テーブルの AUTO_INCREMENT `user_touroku`
 --
 ALTER TABLE `user_touroku`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
