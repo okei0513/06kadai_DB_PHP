@@ -66,10 +66,6 @@ if ($status == false) {
       <!-- // idを見えないように送る.input type="hidden"を使用する！form内に以下を追加 -->
       <input type="hidden" name="id" value="<?= $record['id'] ?>">
       <!-- 更新のformは，登録と同じくpostで各値を送信しています！ -->
-      <div>
-        <button>submit</button>
-      </div>
-
     </fieldset>
   </form>
 
