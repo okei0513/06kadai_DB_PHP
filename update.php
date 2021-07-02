@@ -6,7 +6,7 @@
 $id = $_POST['id'];
 $username = $_POST['username'];
 $mail = $_POST['mail'];
-$gender = $_POST['gender'];
+$chiiki = $_POST['chiiki'];
 $age = $_POST['age'];
 $kijutu = $_POST['kijutu'];
 
@@ -15,12 +15,12 @@ include('functions.php');
 $pdo = connect_to_db();
 
 // idを指定して更新するSQLを作成（UPDATE文）
-$sql = "UPDATE user_touroku SET username=:username, mail=:mail,gender=:gender,age=:age,kijutu=:kijutu,
+$sql = "UPDATE user_touroku SET username=:username, mail=:mail,chiiki=:chiiki,age=:age,kijutu=:kijutu,
  updated_at=sysdate() WHERE id=:id";
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':username', $username, PDO::PARAM_STR);
 $stmt->bindValue(':mail', $mail, PDO::PARAM_STR);
-$stmt->bindValue(':gender', $gender, PDO::PARAM_INT);
+$stmt->bindValue(':chiiki', $chiiki, PDO::PARAM_INT);
 $stmt->bindValue(':age', $age, PDO::PARAM_STR);
 $stmt->bindValue(':kijutu', $kijutu, PDO::PARAM_INT);
 $stmt->bindValue(':id', $id, PDO::PARAM_STR);

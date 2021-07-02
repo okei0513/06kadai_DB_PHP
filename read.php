@@ -24,10 +24,10 @@ if ($status == false) {
         $output .= "<tr>";
         $output .= "<td>{$record["username"]}</td>";
         $output .= "<td>{$record["mail"]}</td>";
-        $output .= "<td>{$record["gender"]}</td>";
+        $output .= "<td>{$record["chiiki"]}</td>";
         $output .= "<td>{$record["age"]}</td>";
         $output .= "<td>{$record["kijutu"]}</td>";
-        $output .= "</tr>";
+        // $output .= "</tr>";
         // edit deleteリンクを追加
         $output .= "<td>
             <a href='edit.php?id={$record["id"]}'>edit</a>
@@ -61,13 +61,13 @@ if ($status == false) {
                 <tr>
                     <th>ユーザー名</th>
                     <th>mail</th>
-                    <th>性別</th>
+                    <th>地域</th>
                     <th>年齢</th>
                     <th>気になること(任意)</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- ここに<tr><td>deadline</td><td>todo</td><tr>の形でデータが入る -->
+                <!-- ここに<tr><td>項目</td><td>項目</td><tr>の形でデータが入る -->
                 <?= $output ?>
             </tbody>
         </table>

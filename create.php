@@ -6,7 +6,7 @@
 if (
     !isset($_POST['username']) || $_POST['username'] == '' ||
     !isset($_POST['mail']) || $_POST['mail'] == '' ||
-    !isset($_POST['gender']) || $_POST['gender'] == '' ||
+    !isset($_POST['chiiki']) || $_POST['chiiki'] == '' ||
     !isset($_POST['age']) || $_POST['age'] == '' ||
     !isset($_POST['kijutu']) || $_POST['kijutu'] == ''
 ) {
@@ -16,7 +16,7 @@ if (
 //データを変数に格納
 $username = $_POST['username'];
 $mail = $_POST['mail'];
-$gender = $_POST['gender'];
+$chiiki = $_POST['chiiki'];
 $age = $_POST['age'];
 $kijutu = $_POST['kijutu'];
 
@@ -26,13 +26,13 @@ $pdo = connect_to_db();
 
 //悪意のある誰かが何かを送ってくる可能性
 //SQLで表示⇨VALUESを編集
-$sql = 'INSERT INTO user_touroku(id, username, mail, gender, age, kijutu)
-        VALUES(NULL, :username, :mail, :gender, :age, :kijutu)';
+$sql = 'INSERT INTO user_touroku(id, username, mail, chiiki, age, kijutu)
+        VALUES(NULL, :username, :mail, :chiiki, :age, :kijutu)';
 
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':username', $username, PDO::PARAM_STR);
 $stmt->bindValue(':mail', $mail, PDO::PARAM_STR);
-$stmt->bindValue(':gender', $gender, PDO::PARAM_STR);
+$stmt->bindValue(':chiiki', $chiiki, PDO::PARAM_STR);
 $stmt->bindValue(':age', $age, PDO::PARAM_STR);
 $stmt->bindValue(':kijutu', $kijutu, PDO::PARAM_STR);
 
