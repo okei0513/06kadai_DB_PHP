@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- ホスト: localhost
--- 生成日時: 2021 年 7 月 01 日 16:52
+-- 生成日時: 2021 年 7 月 02 日 07:07
 -- サーバのバージョン： 10.4.19-MariaDB
 -- PHP のバージョン: 7.4.20
 
@@ -31,7 +31,7 @@ CREATE TABLE `user_touroku` (
   `id` int(12) NOT NULL,
   `username` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `mail` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gender` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `chiiki` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `age` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `kijutu` text COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -40,11 +40,12 @@ CREATE TABLE `user_touroku` (
 -- テーブルのデータのダンプ `user_touroku`
 --
 
-INSERT INTO `user_touroku` (`id`, `username`, `mail`, `gender`, `age`, `kijutu`) VALUES
-(6, 'たまご', 'keienne0513@icloud.com', '男性', '1', '健康'),
+INSERT INTO `user_touroku` (`id`, `username`, `mail`, `chiiki`, `age`, `kijutu`) VALUES
 (7, 'こあら', 'mail', '女性', '100', 'あさごはん'),
 (8, 'かめ', 'ggg', '男性', '36', 'みどり'),
-(9, 'かえる', 'sxz', '女性', '３４', 'あさごはん');
+(9, 'かえる', 'sxz', '女性', '３４', 'あさごはん'),
+(11, 'とかげ', 'keienne0513@icloud.com', '北海道', '９０', 'しっぽ'),
+(12, 'かわせ', 'aaa', '神奈川県', '1', 'しっぽ');
 
 --
 -- ダンプしたテーブルのインデックス
@@ -64,7 +65,7 @@ ALTER TABLE `user_touroku`
 -- テーブルの AUTO_INCREMENT `user_touroku`
 --
 ALTER TABLE `user_touroku`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
