@@ -20,7 +20,7 @@
                 </div>
                 <div class="koumoku">
                     地域：<select name="chiiki">
-                        <option value="">選択してください</option>
+                        <option value=" disabled style='display:none;'">選択してください</option>
                         <option value="北海道">北海道</option>
                         <option value="青森県">青森県</option>
                         <option value="岩手県">岩手県</option>
@@ -33,7 +33,7 @@
                         <option value="群馬県">群馬県</option>
                         <option value="埼玉県">埼玉県</option>
                         <option value="千葉県">千葉県</option>
-                        <option value="東京都" selected>東京都</option>
+                        <option value="東京都">東京都</option>
                         <option value="神奈川県">神奈川県</option>
                         <option value="新潟県">新潟県</option>
                         <option value="富山県">富山県</option>
