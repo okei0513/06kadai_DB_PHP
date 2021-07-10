@@ -2,7 +2,6 @@
 // var_dump($_POST);
 // exit();
 
-
 $id = $_POST['id'];
 $username = $_POST['username'];
 $mail = $_POST['mail'];
@@ -15,15 +14,14 @@ include('functions.php');
 $pdo = connect_to_db();
 
 // idを指定して更新するSQLを作成（UPDATE文）
-$sql = "UPDATE user_touroku SET username=:username, mail=:mail,chiiki=:chiiki,age=:age,kijutu=:kijutu,
- updated_at=sysdate() WHERE id=:id";
+$sql = "UPDATE user_touroku SET username=:username, mail=:mail, chiiki=:chiiki, age=:age, kijutu=:kijutu, WHERE id=:id";
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':username', $username, PDO::PARAM_STR);
 $stmt->bindValue(':mail', $mail, PDO::PARAM_STR);
-$stmt->bindValue(':chiiki', $chiiki, PDO::PARAM_INT);
+$stmt->bindValue(':chiiki', $chiiki, PDO::PARAM_STR);
 $stmt->bindValue(':age', $age, PDO::PARAM_STR);
-$stmt->bindValue(':kijutu', $kijutu, PDO::PARAM_INT);
-$stmt->bindValue(':id', $id, PDO::PARAM_STR);
+$stmt->bindValue(':kijutu', $kijutu, PDO::PARAM_STR);
+$stmt->bindValue(':id', $id, PDO::PARAM_INT);
 
 $status = $stmt->execute();
 
@@ -38,8 +36,7 @@ if ($status == false) {
     header("Location:read.php");
     exit();
 }
-
+// var_dump($_POST);
+// exit();
 //更新は負荷・コストかかる
 //更新処理は必要か要検討
-
-//課題：ユーザー管理機能。ログインなどがわかるもの

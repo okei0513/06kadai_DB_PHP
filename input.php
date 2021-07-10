@@ -20,8 +20,10 @@
                 </div>
                 <div class="koumoku">
                     地域：<select name="chiiki">
-                        <option value=" disabled style='display:none;'">選択してください</option>
-                        <option value="北海道">北海道</option>
+                        <option value=" disabled" style='display:none;'>選択してください</option>
+                        <!-- disableで最初に「選択してください」を表示させることができる -->
+                        <!-- display:noneでセレクトタブを押すと↑の文字が見えなくなる -->
+                        <option value=" ">北海道</option>
                         <option value="青森県">青森県</option>
                         <option value="岩手県">岩手県</option>
                         <option value="宮城県">宮城県</option>
